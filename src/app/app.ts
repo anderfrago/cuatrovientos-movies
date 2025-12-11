@@ -1,16 +1,15 @@
-import { Component } from '@angular/core';
-import { MoviesPageComponent } from './pages/movies-page/movies-page';
+import { Component, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MoviesPageComponent],
-  template: `
-    <main>
-      <app-movies-page />
-    </main>
-  `,
+  imports: [RouterOutlet],
+  templateUrl: './app.html',
   styles: `main { padding: 20px; }`
 })
-export class App {}
+export class App {
+
+  title = signal('Cuatrovientos Movies');
+}
